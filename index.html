@@ -2,10 +2,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Image Comparison Tool</title>
-<script type='text/javascript' src="files/jquery-3.2.0.min.js"></script>
-<script type='text/javascript' src="files/jquery.mousewheel.min.js"></script>
-<script type='text/javascript' src="files/resemble.js"></script>
-<script type='text/javascript' src="files/exif.js"></script>
+<script type='text/javascript' src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+<script type='text/javascript' src="https://cdn.jsdelivr.net/npm/jquery-mousewheel@3.1.13/jquery.mousewheel.min.js"></script>
+<script type='text/javascript' src="https://cdn.jsdelivr.net/npm/resemblejs@5.0.0/resemble.min.js"></script>
+<script type='text/javascript' src="https://cdn.jsdelivr.net/npm/exif-js@2.3.0/exif.min.js"></script>
 <link rel="stylesheet" href="files/compareImages.css">
 </head>
 <body>
@@ -15,9 +15,10 @@
 	<label><input id="displayDetails" type="checkbox" checked="">Display details</label>
 	<label><input id="displayExif" type="checkbox" checked="">Display EXIF</label>
 	<label><input id="pixelated" type="checkbox" checked="">Pixelated</label>
+	<label><input id="rightPanel" type="checkbox" checked="">Display right panel</label>
 	<button id="stack">Hold to swap</button>
 	<button id="play">Play/Pause</button>
-	<a id="github" href="https://github.com/jklgit/Image-Comparison-in-Browser">View on Github</a>
+	<a id="github" href="https://github.com/coo11/Image-Comparison-in-Browser">View on Github</a>
 </div>
 
 <div id="content">
