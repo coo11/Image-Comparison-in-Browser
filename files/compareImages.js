@@ -145,54 +145,80 @@ var temp;
     });
 
   // Listener for resemble
-  jQuery('input[name="resemble-method"], input[name="resemble-color"]').each(
-    function (i) {
-      // Reset to "nothing" and "flat"
-      if (i === 0 || i === 3) {
-        this.checked = true;
-      }
-      this.disabled = true;
-      this.onclick = function () {
-        if (resembleConfig !== null) {
-          switch (this.parentNode.innerText) {
-            case "Nothing":
-              resembleConfig.ignoreNothing();
-              break;
-            case "Less":
-              resembleConfig.ignoreLess();
-              break;
-            case "Colors":
-              resembleConfig.ignoreColors();
-              break;
-            case "Flat":
-              resemble.outputSettings({
-                errorType: "flat",
-              });
-              resembleConfig.repaint();
-              break;
-            case "Move":
-              resemble.outputSettings({
-                errorType: "movement",
-              });
-              resembleConfig.repaint();
-              break;
-            case "Flat diff":
-              resemble.outputSettings({
-                errorType: "flatDifferenceIntensity",
-              });
-              resembleConfig.repaint();
-              break;
-            case "Move diff":
-              resemble.outputSettings({
-                errorType: "movementDifferenceIntensity",
-              });
-              resembleConfig.repaint();
-              break;
-          }
-        }
-      };
+  jQuery(
+    'input[name="resemble-color"], input[name="resemble-ignore"], input[name="resemble-mode"]'
+  ).each(function (i) {
+    // Reset to "pink, less" and "flat"
+    if (i === 0 || i === 3 || i === 5) {
+      this.checked = true;
     }
-  );
+    this.disabled = true;
+    this.onclick = function () {
+      if (resembleConfig !== null) {
+        switch (this.parentNode.innerText) {
+          case "Pink":
+            resemble.outputSettings({
+              errorColor: {
+                red: 255,
+                green: 0,
+                blue: 255,
+              },
+            });
+            resembleConfig.repaint();
+            break;
+          case "Yellow":
+            resemble.outputSettings({
+              errorColor: {
+                red: 255,
+                green: 255,
+                blue: 0,
+              },
+            });
+            resembleConfig.repaint();
+            break;
+          case "Nothing":
+            resembleConfig.ignoreNothing();
+            break;
+          case "Less":
+            resembleConfig.ignoreLess();
+            break;
+          case "Colors":
+            resembleConfig.ignoreColors();
+            break;
+          case "Flat":
+            resemble.outputSettings({
+              errorType: "flat",
+            });
+            resembleConfig.repaint();
+            break;
+          case "Move":
+            resemble.outputSettings({
+              errorType: "movement",
+            });
+            resembleConfig.repaint();
+            break;
+          case "Flat diff":
+            resemble.outputSettings({
+              errorType: "flatDifferenceIntensity",
+            });
+            resembleConfig.repaint();
+            break;
+          case "Move diff":
+            resemble.outputSettings({
+              errorType: "movementDifferenceIntensity",
+            });
+            resembleConfig.repaint();
+            break;
+          case "Diff only":
+            resemble.outputSettings({
+              errorType: "diffOnly",
+            });
+            resembleConfig.repaint();
+            break;
+        }
+      }
+    };
+  });
 
   // Add mouselistener for zoom and pan
   jQuery("#left")
@@ -843,7 +869,7 @@ function compareImages() {
     }
 
     resembleConfig = resemble(image1.dataUrl)
-      .compareTo(image2.dataUrl)
+      .compareTo(image2.dataUrl) // Ignore less by default?
       .onComplete(function (data) {
         // Image 3 Loaded
         image3.dom = document.querySelector("#right > .main");
@@ -854,7 +880,7 @@ function compareImages() {
           "Mismatch: " + data.misMatchPercentage + " %"
         );
         jQuery(
-          'input[name="resemble-method"], input[name="resemble-color"]'
+          'input[name="resemble-color"], input[name="resemble-ignore"], input[name="resemble-mode"]'
         ).each(function () {
           this.disabled = false;
         });

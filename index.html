@@ -2,6 +2,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Image Comparison Tool</title>
+<link rel="icon" href="data:,">
 <script type='text/javascript' src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
 <script type='text/javascript' src="https://cdn.jsdelivr.net/npm/jquery-mousewheel@3.1.13/jquery.mousewheel.min.js"></script>
 <script type='text/javascript' src="https://cdn.jsdelivr.net/npm/resemblejs@5.0.0/resemble.min.js"></script>
@@ -35,13 +36,16 @@
 		<img class="main"></img>
 		<div class="details"></div>
 		<div id="resemble">
-			Ignore: <label><input type="radio" checked="" name="resemble-method">Nothing</label>
-			<label><input type="radio" name="resemble-method">Less</label>
-			<label><input type="radio" name="resemble-method">Colors</label><br>
-			Color: <label><input type="radio" checked="" name="resemble-color">Flat</label>
-			<label><input type="radio" name="resemble-color">Move</label>
-			<label><input type="radio" name="resemble-color">Flat diff</label>
-			<label><input type="radio" name="resemble-color">Move diff</label>
+			Color: <label><input type="radio" checked="" name="resemble-color">Pink</label>
+			<label><input type="radio" name="resemble-color">Yellow</label><br>
+			Ignore: <label><input type="radio" checked="" name="resemble-ignore">Nothing</label>
+			<label><input type="radio" name="resemble-ignore">Less</label>
+			<label><input type="radio" name="resemble-ignore">Colors</label><br>
+			Mode: <label><input type="radio" checked="" name="resemble-mode">Flat</label>
+			<label><input type="radio" name="resemble-mode">Move</label>
+			<label><input type="radio" name="resemble-mode">Flat diff</label>
+			<label><input type="radio" name="resemble-mode">Move diff</label>
+			<label><input type="radio" name="resemble-mode">Diff only</label>
 		</div>
 	</div>
 <div>
