@@ -10,7 +10,7 @@ var image1 = {
   file: null, // dropped file
   zoom: null, // Zoom button jQuery-object
   src: "", // For drag and drop from another browser
-  type: "", // file type
+  type: "" // file type
 };
 var image2 = clone(image1);
 var image3 = clone(image1);
@@ -145,9 +145,7 @@ var temp;
     });
 
   // Listener for resemble
-  jQuery(
-    'input[name="resemble-color"], input[name="resemble-ignore"], input[name="resemble-mode"]'
-  ).each(function (i) {
+  jQuery('input[name="resemble-color"], input[name="resemble-ignore"], input[name="resemble-mode"]').each(function (i) {
     // Reset to "pink, less" and "flat"
     if (i === 0 || i === 3 || i === 5) {
       this.checked = true;
@@ -161,8 +159,8 @@ var temp;
               errorColor: {
                 red: 255,
                 green: 0,
-                blue: 255,
-              },
+                blue: 255
+              }
             });
             resembleConfig.repaint();
             break;
@@ -171,8 +169,8 @@ var temp;
               errorColor: {
                 red: 255,
                 green: 255,
-                blue: 0,
-              },
+                blue: 0
+              }
             });
             resembleConfig.repaint();
             break;
@@ -187,31 +185,31 @@ var temp;
             break;
           case "Flat":
             resemble.outputSettings({
-              errorType: "flat",
+              errorType: "flat"
             });
             resembleConfig.repaint();
             break;
           case "Move":
             resemble.outputSettings({
-              errorType: "movement",
+              errorType: "movement"
             });
             resembleConfig.repaint();
             break;
           case "Flat diff":
             resemble.outputSettings({
-              errorType: "flatDifferenceIntensity",
+              errorType: "flatDifferenceIntensity"
             });
             resembleConfig.repaint();
             break;
           case "Move diff":
             resemble.outputSettings({
-              errorType: "movementDifferenceIntensity",
+              errorType: "movementDifferenceIntensity"
             });
             resembleConfig.repaint();
             break;
           case "Diff only":
             resemble.outputSettings({
-              errorType: "diffOnly",
+              errorType: "diffOnly"
             });
             resembleConfig.repaint();
             break;
@@ -241,19 +239,19 @@ var temp;
       if (image1.j !== null) {
         image1.j.css({
           top: image1.j.position().top + y + "px",
-          left: image1.j.position().left + x + "px",
+          left: image1.j.position().left + x + "px"
         });
       }
       if (image2.j !== null) {
         image2.j.css({
           top: image2.j.position().top + y + "px",
-          left: image2.j.position().left + x + "px",
+          left: image2.j.position().left + x + "px"
         });
       }
       if (image3.j !== null) {
         image3.j.css({
           top: image3.j.position().top + y + "px",
-          left: image3.j.position().left + x + "px",
+          left: image3.j.position().left + x + "px"
         });
       }
     }
@@ -282,7 +280,7 @@ var temp;
         width: image1.j.width() * (1 + s) + "px",
         height: image1.j.height() * (1 + s) + "px",
         top: y_0 + (1 + s) * (image1.j.position().top - y_0) + "px",
-        left: x_0 + (1 + s) * (image1.j.position().left - x_0) + "px",
+        left: x_0 + (1 + s) * (image1.j.position().left - x_0) + "px"
       });
     }
     if (image2.j !== null) {
@@ -290,7 +288,7 @@ var temp;
         width: image2.j.width() * (1 + s) + "px",
         height: image2.j.height() * (1 + s) + "px",
         top: y_0 + (1 + s) * (image2.j.position().top - y_0) + "px",
-        left: x_0 + (1 + s) * (image2.j.position().left - x_0) + "px",
+        left: x_0 + (1 + s) * (image2.j.position().left - x_0) + "px"
       });
     }
     if (image3.j !== null) {
@@ -298,7 +296,7 @@ var temp;
         width: image3.j.width() * (1 + s) + "px",
         height: image3.j.height() * (1 + s) + "px",
         top: y_0 + (1 + s) * (image3.j.position().top - y_0) + "px",
-        left: x_0 + (1 + s) * (image3.j.position().left - x_0) + "px",
+        left: x_0 + (1 + s) * (image3.j.position().left - x_0) + "px"
       });
     }
 
@@ -327,19 +325,19 @@ var temp;
     if (image1.j !== null) {
       image1.j.css({
         top: image1.j.position().top + y + "px",
-        left: image1.j.position().left + x + "px",
+        left: image1.j.position().left + x + "px"
       });
     }
     if (image2.j !== null) {
       image2.j.css({
         top: image2.j.position().top + y + "px",
-        left: image2.j.position().left + x + "px",
+        left: image2.j.position().left + x + "px"
       });
     }
     if (image3.j !== null) {
       image3.j.css({
         top: image3.j.position().top + y + "px",
-        left: image3.j.position().left + x + "px",
+        left: image3.j.position().left + x + "px"
       });
     }
 
@@ -349,18 +347,10 @@ var temp;
 
   // Get cross browser window width and height
   function getWidth() {
-    return (
-      window.innerWidth ||
-      document.documentElement.clientWidth ||
-      document.body.clientWidth
-    );
+    return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
   }
   function getHeight() {
-    return (
-      window.innerHeight ||
-      document.documentElement.clientHeight ||
-      document.body.clientHeight
-    );
+    return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
   }
 
   // After everything is ready handle current location arguments
@@ -428,7 +418,7 @@ function reset() {
         width: w_p,
         height: w_p * r_1,
         top: 0.5 * (h_p - w_p * r_1),
-        left: 0,
+        left: 0
       });
     }
     if (r_2) {
@@ -436,7 +426,7 @@ function reset() {
         width: w_p,
         height: w_p * r_2,
         top: 0.5 * (h_p - w_p * r_2),
-        left: 0,
+        left: 0
       });
     }
   } else {
@@ -446,7 +436,7 @@ function reset() {
         width: h_p / r_1,
         height: h_p,
         top: 0,
-        left: 0.5 * (w_p - h_p / r_1),
+        left: 0.5 * (w_p - h_p / r_1)
       });
     }
     if (r_2) {
@@ -454,7 +444,7 @@ function reset() {
         width: h_p / r_2,
         height: h_p,
         top: 0,
-        left: 0.5 * (w_p - h_p / r_2),
+        left: 0.5 * (w_p - h_p / r_2)
       });
     }
   }
@@ -478,7 +468,7 @@ function reset3() {
       width: image1.j.width(),
       height: image1.j.height(),
       top: image1.j.css("top"),
-      left: image1.j.css("left"),
+      left: image1.j.css("left")
     });
   }
 }
@@ -508,7 +498,7 @@ function reset100(base) {
       width: image1.j.width() * (1 + s) + "px",
       height: image1.j.height() * (1 + s) + "px",
       top: y_0 + (1 + s) * (image1.j.position().top - y_0) + "px",
-      left: x_0 + (1 + s) * (image1.j.position().left - x_0) + "px",
+      left: x_0 + (1 + s) * (image1.j.position().left - x_0) + "px"
     });
   }
   if (image2.j !== null) {
@@ -516,7 +506,7 @@ function reset100(base) {
       width: image2.j.width() * (1 + s) + "px",
       height: image2.j.height() * (1 + s) + "px",
       top: y_0 + (1 + s) * (image2.j.position().top - y_0) + "px",
-      left: x_0 + (1 + s) * (image2.j.position().left - x_0) + "px",
+      left: x_0 + (1 + s) * (image2.j.position().left - x_0) + "px"
     });
   }
   if (image3.j !== null) {
@@ -524,7 +514,7 @@ function reset100(base) {
       width: image3.j.width() * (1 + s) + "px",
       height: image3.j.height() * (1 + s) + "px",
       top: y_0 + (1 + s) * (image3.j.position().top - y_0) + "px",
-      left: x_0 + (1 + s) * (image3.j.position().left - x_0) + "px",
+      left: x_0 + (1 + s) * (image3.j.position().left - x_0) + "px"
     });
   }
 
@@ -536,14 +526,10 @@ function reset100(base) {
 // Zoom button update to current zoom
 function updateZoomButton() {
   if (image1.j !== null) {
-    image1.zoom.html(
-      Math.round((image1.j.width() / image1.width) * 1000) / 10 + " %"
-    );
+    image1.zoom.html(Math.round((image1.j.width() / image1.width) * 1000) / 10 + " %");
   }
   if (image2.j !== null) {
-    image2.zoom.html(
-      Math.round((image2.j.width() / image2.width) * 1000) / 10 + " %"
-    );
+    image2.zoom.html(Math.round((image2.j.width() / image2.width) * 1000) / 10 + " %");
   }
 }
 
@@ -636,8 +622,7 @@ function downloadImageFromUrl(url, div, image) {
     reset();
 
     // Add details: domain, filename and size, if information has not been read before
-    var arguments =
-      url.search !== "" ? "Arguments: " + url.search + "<br>" : "";
+    var arguments = url.search !== "" ? "Arguments: " + url.search + "<br>" : "";
     div.find(".details").html(
       "Domain: " +
         url.host +
@@ -689,11 +674,7 @@ function downloadImageFromUrl(url, div, image) {
 
       // Get filesize, if post not read before
       getFilesize(img.src, function (filesize) {
-        div
-          .find(".details")
-          .html(
-            div.find(".details").html() + "<br>Filesize: " + filesize + " Bytes"
-          );
+        div.find(".details").html(div.find(".details").html() + "<br>Filesize: " + filesize + " Bytes");
       });
 
       // Read EXIF data and append to div if given
@@ -757,6 +738,8 @@ function handleFile(div, image) {
     case "image/png":
     case "image/gif":
     case "image/bmp":
+    case "image/webp":
+    case "image/avif":
       image.dom = new Image();
       break;
 
@@ -799,15 +782,10 @@ function handleFile(div, image) {
             image.zoom.show();
             reset();
 
-            getDataUrl(
-              image.dom,
-              image.width,
-              image.height,
-              function (dataUrl) {
-                image.dataUrl = dataUrl;
-                compareImages();
-              }
-            );
+            getDataUrl(image.dom, image.width, image.height, function (dataUrl) {
+              image.dataUrl = dataUrl;
+              compareImages();
+            });
 
             // Metadata from PNG
             if (image.file.type === "image/png") {
@@ -821,9 +799,7 @@ function handleFile(div, image) {
               delete metadata.details.width;
               delete metadata.details.height;
               details = jQuery(div).find(".details");
-              details.html(
-                details.html() + "<br>" + object2html(metadata.details)
-              );
+              details.html(details.html() + "<br>" + object2html(metadata.details));
             }
           }
         };
@@ -864,7 +840,7 @@ function compareImages() {
     if (resembleConfig === null) {
       resemble.outputSettings({
         largeImageThreshold: 1200,
-        transparency: 0.3,
+        transparency: 0.3
       });
     }
 
@@ -876,12 +852,8 @@ function compareImages() {
         image3.j = jQuery(image3.dom).attr("src", data.getImageDataUrl());
         image3.width = image1.width;
         image3.height = image1.height;
-        jQuery("#right > .details").html(
-          "Mismatch: " + data.misMatchPercentage + " %"
-        );
-        jQuery(
-          'input[name="resemble-color"], input[name="resemble-ignore"], input[name="resemble-mode"]'
-        ).each(function () {
+        jQuery("#right > .details").html("Mismatch: " + data.misMatchPercentage + " %");
+        jQuery('input[name="resemble-color"], input[name="resemble-ignore"], input[name="resemble-mode"]').each(function () {
           this.disabled = false;
         });
 
@@ -904,11 +876,11 @@ function displayRight(b) {
     } else {
       jQuery("#left").css({
         left: "0",
-        width: "calc(100%/3 - 3px)",
+        width: "calc(100%/3 - 3px)"
       });
       jQuery("#mid").css({
         left: "calc(100%/3)",
-        width: "calc(100%/3 - 3px)",
+        width: "calc(100%/3 - 3px)"
       });
       jQuery("#right").show();
       reset();
@@ -917,11 +889,11 @@ function displayRight(b) {
     // Deactivate third panel
     jQuery("#left").css({
       left: "0",
-      width: "calc(50% - 3px)",
+      width: "calc(50% - 3px)"
     });
     jQuery("#mid").css({
       left: "50%",
-      width: "calc(50% - 3px)",
+      width: "calc(50% - 3px)"
     });
     jQuery("#right").hide();
     reset();
@@ -976,9 +948,7 @@ function getFilesize(src, onComplete) {
         if (filesize !== null) {
           onComplete(filesize);
         } else {
-          console.log(
-            'Error reading filesize: Access-Control-Expose-Headers:"Content-Length" is missing in response header.'
-          );
+          console.log('Error reading filesize: Access-Control-Expose-Headers:"Content-Length" is missing in response header.');
         }
       } else {
         console.log("Error reading filesize.");
@@ -1020,8 +990,7 @@ function parseUrl(link) {
 
   // Get all parts of the link
   // Regexp coarse: ((protocol://host:port)|file://)(path)(name.ext)
-  var regexp =
-    /^((([^\/\.]+):\/\/)?(([^\/\.]+\.)*[^\/\.]+\.[^\/\.:]+(:\d+)?)|(file):\/\/)(\/.+\/|\/)?([^\/]+)?$/;
+  var regexp = /^((([^\/\.]+):\/\/)?(([^\/\.]+\.)*[^\/\.]+\.[^\/\.:]+(:\d+)?)|(file):\/\/)(\/.+\/|\/)?([^\/]+)?$/;
   var tokens = regexp.exec(url.hrefNoSearch);
   // url.regexp = regexp; // Save to check
   // url.tokens = tokens;
@@ -1073,8 +1042,7 @@ function parseUrl(link) {
     for (var i = 0; i < array.length; i++) {
       n = array[i].indexOf("=");
       if (n > -1) {
-        url.args[decodeURIComponent(array[i].substr(0, n))] =
-          decodeURIComponent(array[i].substr(n + 1));
+        url.args[decodeURIComponent(array[i].substr(0, n))] = decodeURIComponent(array[i].substr(n + 1));
       } else {
         url.args[decodeURIComponent(array[i])] = undefined;
       }
@@ -1169,13 +1137,11 @@ function readPNGMetadataFromDataUrl(dataUrl) {
         break;
       case "zTXt":
         array_text = binaryToString(i, n_chunkLength).split("\0");
-        metadata.text[array_text[0]] =
-          "compressed " + n_chunkLength + " byte text";
+        metadata.text[array_text[0]] = "compressed " + n_chunkLength + " byte text";
         break;
       case "iTXt":
         array_text = binaryToString(i, n_chunkLength).split("\0");
-        metadata.text[array_text[0]] =
-          "icompressed " + n_chunkLength + " byte text";
+        metadata.text[array_text[0]] = "icompressed " + n_chunkLength + " byte text";
         break;
 
       // Handle miscellaneous information
